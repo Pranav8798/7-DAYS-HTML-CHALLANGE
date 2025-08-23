@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Time Table</title>
+  <style>
+    /* 🔥 Neon Background Animation */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: linear-gradient(270deg, #ff00ff, #00ffff, #39ff14, #ff073a, #ffd700, #00ffea);
+      background-size: 1200% 1200%;
+      animation: neonBG 20s ease infinite;
+    }
+
+    @keyframes neonBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-shadow: 0 0 15px #0ff, 0 0 25px #f0f, 0 0 40px #ff0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 85%;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.7),
+                  0 0 50px rgba(255, 0, 255, 0.5);
+    }
+
+    th, td {
+      padding: 15px;
+      border: 2px solid transparent;
+      font-size: 18px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    th {
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      color: #fff;
+      text-shadow: 0 0 8px #000;
+      border: 2px solid #fff;
+    }
+
+    /* Border Colors by Column */
+    td:nth-child(1) { border-color: #ff00ff; }
+    td:nth-child(2) { border-color: #00ffff; }
+    td:nth-child(3) { border-color: #39ff14; }
+    td:nth-child(4) { border-color: #ff073a; }
+    td:nth-child(5) { border-color: #ffd700; }
+    td:nth-child(6) { border-color: #00ffea; }
+
+    /* Hover Neon Glow */
+    td:hover {
+      background: #111;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #f0f, 0 0 40px #ff0;
+      transform: scale(1.1);
+      border-color: #fff;
+      box-shadow: 0 0 15px #0ff, 0 0 30px #f0f;
+    }
+  </style>
+</head>
+<body>
+  <p>⚡ My Neon Time Table – Practice + Discipline + Fun ⚡</p>
+ <b>Written for practice only</b>
+  <table>
+    <tr>
+      <th>Days</th>
+      <th>9-11</th> 
+      <th>12-2</th>
+      <th>4-6</th>
+      <th>8-10</th>
+      <th>10-12</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td>HTML Lec.</td>
+      <td>Walk</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td>CSS Lec.</td>
+      <td>Sleep</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>JavaScript Lec.</td>
+      <td>Coding</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td>HTML Practice</td>
+      <td>Insta Reel</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td>CSS Practice</td>
+      <td>Chatting</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>JavaScript Practice</td>
+      <td>Hobby</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td>Movie Time</td>
+      <td>Chilling</td>
+      <td>Practice</td>
+      <td>HTML Lec.</td>
+      <td>Practice</td>
+    </tr>
+  </table>
+</body>
+</html>
