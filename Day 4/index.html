@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranav Pote - Portfolio</title>
+  <style>
+    /* Rainbow animated background */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.8;
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 1400% 1400%;
+      animation: rainbowBG 20s ease infinite;
+    }
+
+    @keyframes rainbowBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 24px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 15px;
+    }
+
+    h2 {
+      color: #ff4e50;
+      border-bottom: 2px solid #f9d423;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 20px;
+      text-align: justify;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      padding: 15px;
+      border: 2px solid #f9d423;
+      border-radius: 10px;
+      background: #fffbea;
+      transition: transform 0.3s;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      background: #fff4c3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #f9d423;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pranav Sunil Pote</h1>
+  </header>
+
+  <main>
+    <h2>About Me</h2>
+    <p>
+      My name is Pranav Pote, and I am a BCA student with a growing interest in technology, coding, and creativity. From the very beginning of my journey into the world of computers, I have enjoyed exploring how websites are made and how the internet connects people, ideas, and opportunities. 
+    </p>
+    <p>
+      I started by learning HTML and then slowly moved toward CSS and other basics of web development. Writing even a simple web page gives me confidence and excitement, because it feels like turning imagination into something real and interactive on the screen.
+    </p>
+
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">Personal Info Card</div>
+      <div class="project-card">College Time Table</div>
+      <div class="project-card">Registration Form</div>
+      <div class="project-card">Simple Portfolio Layout</div>
+      <div class="project-card">Google Homepage Clone</div>
+      <div class="project-card">Blog Post Layout</div>
+      <div class="project-card">Resume Page</div>
+    </div>
+  </main>
+
+  <footer>
+    Contact: 
+    <a href="mailto:pranavpote18@gmail.com">pranavpote18@gmail.com</a> |
+    <a href="tel:7709664387">7709664387</a>
+  </footer>
+</body>
+</html>

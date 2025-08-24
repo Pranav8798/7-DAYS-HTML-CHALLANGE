@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="Phone"], input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    fieldset {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  
+  <canvas id="spray"></canvas>
+
+  <form action="server.js" method="post">
+    <label for="name">Name</label>
+    <input id="name" name="Name" type="text" required />
+
+    <label for="Phone">Phone no.</label>
+    <input id="Phone" name="Phone" type="Phone" required />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required />
+
+    <fieldset>
+      <legend>Gender</legend>
+      <label><input type="radio" name="gender" value="male" required /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+      <label><input type="radio" name="gender" value="other" /> Other</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Hobbies</legend>
+      <label><input type="radio" name="hobby" value="coding" required /> Coding</label>
+      <label><input type="radio" name="hobby" value="music" /> Music</label>
+      <label><input type="radio" name="hobby" value="dance" /> Dance</label>
+      <label><input type="radio" name="hobby" value="other" /> Other</label>
+    </fieldset>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+   
+    const canvas = document.getElementById("spray");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    function createParticle() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const radius = Math.random() * 3 + 2;
+      const dx = (Math.random() - 0.5) * 2;
+      const dy = (Math.random() - 0.5) * 2;
+      const colors = ["#ff4b5c", "#6a2c70", "#00bcd4", "#ff9800", "#4caf50", "#e91e63"];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      particles.push({ x, y, radius, dx, dy, color });
+    }
+
+    function drawParticle(p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function updateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, i) => {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
+          particles.splice(i, 1);
+        } else {
+          drawParticle(p);
+        }
+      });
+    }
+
+    function animate() {
+      updateParticles();
+      requestAnimationFrame(animate);
+    }
+
+    setInterval(createParticle, 100);
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
